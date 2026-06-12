@@ -23,10 +23,24 @@ npm run test:ui
 Test another deployment:
 
 ```powershell
-$env:TEST_BASE_URL="https://ahmirjat.github.io/noor-abaya/"
+$env:TEST_BASE_URL="https://ahmirjat.github.io/bayt-al-haya-ui/"
 $env:TEST_EXPECT_DEMO_BANNER="true"
 npm run test:ui
 ```
+
+## GitHub Pages preview
+
+The public UI preview is configured for:
+
+`https://ahmirjat.github.io/bayt-al-haya-ui/`
+
+Build the static Pages artifact locally:
+
+```powershell
+npm run build:pages
+```
+
+The export is written to `out`. Public-preview builds use mock/static data, show the demo banner, disable live admin behavior, and do not call a laptop API.
 
 ## Beginner editing guide
 
