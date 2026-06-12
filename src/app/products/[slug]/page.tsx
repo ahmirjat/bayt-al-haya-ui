@@ -25,12 +25,13 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
         <Link href="/products" className="text-sm text-[#716c63] underline">Back to products</Link>
         <p className="section-kicker mt-8">{product.badge} · {product.category}</p>
         <h1 className="mt-2 text-5xl font-semibold">{product.name}</h1>
+        <p className="mt-4 w-fit rounded-full bg-[#efe0d6] px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-[#765e52]">{product.prototypeLabel}</p>
         <p className="mt-4 text-lg font-bold">${product.price.toFixed(2)} CAD</p>
         <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#716c63]"><span>Color: {product.colorName}</span><span>Sizes: {product.sizes}</span></div>
         <p className="mt-7 leading-7 text-[#5f5a52]">{product.description}</p>
         <p className="mt-3 leading-7 text-[#5f5a52]">{product.details}</p>
         <ProductBehavior slug={product.slug} category={product.category} />
-        <div className="mt-8 grid gap-3 rounded-2xl bg-[#f5eee8] p-5 text-sm text-[#716c63]"><p><strong className="text-[#493d37]">Thoughtfully selected:</strong> Soft feel, modest coverage, and an easy silhouette.</p><p><strong className="text-[#493d37]">Please note:</strong> Cart functionality is a placeholder for now.</p></div>
+        <div className="mt-8 grid gap-3 rounded-2xl bg-[#f5eee8] p-5 text-sm text-[#716c63]"><p><strong className="text-[#493d37]">Prototype preview:</strong> This demo product represents the planned Bayt al-Haya family collection.</p><p><strong className="text-[#493d37]">Please note:</strong> Stock, shipping, cart, and checkout functionality are placeholders for now.</p></div>
       </div>
     </section>
   );

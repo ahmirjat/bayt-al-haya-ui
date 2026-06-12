@@ -20,7 +20,7 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: "Bayt al-Haya",
-  description: "Faith-inspired abayas and modest essentials for everyday grace.",
+  description: "Faith-inspired modest essentials for individuals and families.",
 };
 
 export default function RootLayout({

@@ -53,11 +53,30 @@ test("Bayt al-Haya home, brand, demo mode, and product images load", async () =>
   await clickTestId("reject-optional");
   assert.match(await driver.findElement(By.css('[data-testid="brand-link"]')).getText(), /Bayt al-Haya/);
   assert.match(await driver.findElement(By.css("h1")).getText(), /Faith-inspired modest wear for everyday grace/i);
+  assert.match(await driver.findElement(By.css("body")).getText(), /individuals and families/i);
+  const categories = await driver.findElement(By.css('[data-testid="category-grid"]')).getText();
+  for (const category of ["Abayas", "Hijabs", "Prayer Wear", "Men's Essentials", "Children's Essentials", "Everyday Modest Pieces"]) {
+    assert.match(categories, new RegExp(category.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
   const image = await driver.findElement(By.css("article img"));
   assert.equal(await image.isDisplayed(), true);
   assert.equal(await driver.executeScript("return arguments[0].naturalWidth > 0", image), true);
   const banners = await driver.findElements(By.css('[data-testid="demo-banner"]'));
   assert.equal(banners.length > 0, expectsPublicPreview);
+});
+
+test("family-focused prototype products and product details load", async () => {
+  await resetSite();
+  await clickTestId("reject-optional");
+  await open("/products");
+  const productGrid = await driver.findElement(By.css('[data-testid="product-grid"]')).getText();
+  for (const product of ["Men's Modest Thobe", "Children's Prayer Outfit", "Everyday Modest Tunic", "Modest Gift Set"]) {
+    assert.match(productGrid, new RegExp(product.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
+  assert.match(productGrid, /Coming Soon|Demo Product|Prototype Preview/i);
+  await open("/products/mens-modest-thobe");
+  assert.equal(await driver.findElement(By.css("h1")).getText(), "Men's Modest Thobe");
+  assert.match(await driver.findElement(By.css("body")).getText(), /Stock, shipping, cart, and checkout functionality are placeholders/i);
 });
 
 test("privacy choices can be accepted, rejected, managed, and reset", async () => {

@@ -1,6 +1,6 @@
 # Bayt al-Haya
 
-Faith-inspired abayas, hijabs, prayer wear, and modest essentials. This existing repository remains named `noor-abaya`; the customer-facing brand is Bayt al-Haya.
+Faith-inspired modest essentials for individuals and families. The prototype includes abayas, hijabs, prayer wear, men's essentials, children's essentials, and everyday modest pieces.
 
 ## Run locally
 
