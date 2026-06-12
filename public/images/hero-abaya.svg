@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1050">
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#eadfd2"/><stop offset="1" stop-color="#bba593"/></linearGradient><linearGradient id="dress" x2=".8" y2="1"><stop stop-color="#3c3733"/><stop offset="1" stop-color="#171615"/></linearGradient></defs>
+  <rect width="900" height="1050" rx="48" fill="url(#bg)"/>
+  <circle cx="690" cy="210" r="160" fill="#f7f0e8" opacity=".45"/>
+  <path d="M0 820c180-110 350-80 500 5s280 90 400 8v217H0z" fill="#d7c7b8" opacity=".8"/>
+  <circle cx="450" cy="190" r="62" fill="#9a7968"/>
+  <path d="M380 220q70-90 140 0l40 145-110 55-110-55z" fill="#4b413b"/>
+  <path d="M360 295q90 52 180 0l125 600H235z" fill="url(#dress)"/>
+  <path d="M362 310 210 700l75 35 135-285zm176 0 152 390-75 35-135-285z" fill="#292624"/>
+  <path d="M450 360v535" stroke="#8f786b" stroke-width="3" opacity=".7"/>
+  <path d="M290 845q160 45 320 0" fill="none" stroke="#a88c7d" stroke-width="4" opacity=".45"/>
+  <text x="60" y="95" fill="#4f443d" font-family="Georgia,serif" font-size="28" letter-spacing="8">NOOR EDIT</text>
+</svg>
