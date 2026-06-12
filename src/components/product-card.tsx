@@ -15,7 +15,7 @@ export function ProductCard({ product }: { product: Product }) {
         <div className="flex flex-wrap items-center justify-between gap-2"><p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#967768]">{product.category}</p><span className="rounded-full bg-[#f3ebe5] px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-[#765e52]">{product.prototypeLabel}</span></div>
         <Link href={`/products/${product.slug}`}><h3 className="mt-1 text-2xl font-semibold leading-tight">{product.name}</h3></Link>
         <div className="mt-3 flex items-center justify-between gap-3 text-xs text-[#716c63]"><span className="flex items-center gap-1.5"><i className="h-3 w-3 rounded-full border border-black/10" style={{ background: product.colors[0] }} />{product.colorName}</span><span>Sizes {product.sizes}</span></div>
-        <div className="mt-5 flex items-center justify-between gap-3"><p className="font-bold">${product.price.toFixed(2)} CAD</p><ProductBehavior slug={product.slug} category={product.category} compact trackView={false} /></div>
+        <div className="mt-5 flex items-center justify-between gap-3"><p className="font-bold">${product.price.toFixed(2)} CAD</p>{product.prototypeLabel === "Coming Soon" ? <span data-testid="coming-soon-status" className="rounded-full bg-[#765e52] px-3 py-2 text-xs font-bold text-white">Coming Soon</span> : <ProductBehavior slug={product.slug} category={product.category} compact trackView={false} />}</div>
       </div>
     </article>
   );

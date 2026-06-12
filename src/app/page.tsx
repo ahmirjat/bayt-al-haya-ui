@@ -9,9 +9,9 @@ import { assetPath } from "@/lib/site-config";
 const categories = [
   ["Abayas", "Flowing everyday silhouettes", assetPath("/images/abayas/classic-black-abaya.jpg")],
   ["Hijabs", "Soft finishing touches", assetPath("/images/abayas/soft-taupe-open-abaya.jpg")],
-  ["Prayer Wear", "Comfort for quiet moments", assetPath("/images/abayas/mocha-lifestyle-banner.jpg")],
-  ["Men's Essentials", "Thoughtful pieces for him", assetPath("/images/abaya-taupe.svg")],
-  ["Children's Essentials", "Comfort for growing hearts", assetPath("/images/prayer-set.svg")],
+  ["Prayer Wear", "Comfort for quiet moments", assetPath("/images/family/prayer-khimar-lifestyle.png")],
+  ["Men's Essentials", "Thoughtful pieces for him", assetPath("/images/family/mens-thobe-lifestyle.png")],
+  ["Children's Essentials", "Comfort for growing hearts", assetPath("/images/family/childrens-modest-lifestyle.png")],
   ["Everyday Modest Pieces", "Easy pieces for the family", assetPath("/images/abayas/embroidered-mocha-abaya.jpg")],
 ];
 

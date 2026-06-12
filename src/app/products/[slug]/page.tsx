@@ -30,7 +30,7 @@ export default async function ProductDetailsPage({ params }: { params: Promise<{
         <div className="mt-5 flex flex-wrap gap-5 text-sm text-[#716c63]"><span>Color: {product.colorName}</span><span>Sizes: {product.sizes}</span></div>
         <p className="mt-7 leading-7 text-[#5f5a52]">{product.description}</p>
         <p className="mt-3 leading-7 text-[#5f5a52]">{product.details}</p>
-        <ProductBehavior slug={product.slug} category={product.category} />
+        {product.prototypeLabel === "Coming Soon" ? <p data-testid="coming-soon-status" className="mt-9 w-fit rounded-full bg-[#765e52] px-5 py-3 text-sm font-bold text-white">Coming Soon · Add to cart unavailable</p> : <ProductBehavior slug={product.slug} category={product.category} />}
         <div className="mt-8 grid gap-3 rounded-2xl bg-[#f5eee8] p-5 text-sm text-[#716c63]"><p><strong className="text-[#493d37]">Prototype preview:</strong> This demo product represents the planned Bayt al-Haya family collection.</p><p><strong className="text-[#493d37]">Please note:</strong> Stock, shipping, cart, and checkout functionality are placeholders for now.</p></div>
       </div>
     </section>

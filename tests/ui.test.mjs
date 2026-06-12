@@ -74,8 +74,21 @@ test("family-focused prototype products and product details load", async () => {
     assert.match(productGrid, new RegExp(product.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
   assert.match(productGrid, /Coming Soon|Demo Product|Prototype Preview/i);
+  const cards = await driver.findElements(By.css('[data-testid="product-grid"] article'));
+  for (const card of cards) {
+    const text = await card.getText();
+    if (/Coming Soon/i.test(text)) {
+      assert.equal((await card.findElements(By.xpath('.//button[normalize-space()="Add to cart"]'))).length, 0);
+    }
+    const image = await card.findElement(By.css("img"));
+    await driver.executeScript("arguments[0].scrollIntoView({block: 'center'})", image);
+    await driver.wait(async () => driver.executeScript("return arguments[0].naturalWidth > 0", image), 5000);
+    assert.equal(await driver.executeScript("return arguments[0].naturalWidth > 0", image), true);
+  }
   await open("/products/mens-modest-thobe");
   assert.equal(await driver.findElement(By.css("h1")).getText(), "Men's Modest Thobe");
+  assert.equal((await driver.findElements(By.xpath('//button[normalize-space()="Add to cart"]'))).length, 0);
+  assert.equal(await driver.findElement(By.css('[data-testid="coming-soon-status"]')).isDisplayed(), true);
   assert.match(await driver.findElement(By.css("body")).getText(), /Stock, shipping, cart, and checkout functionality are placeholders/i);
 });
 
